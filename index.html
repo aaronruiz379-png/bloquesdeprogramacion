@@ -1,0 +1,489 @@
+import os
+
+# Definición del contenido basado en los 18 bloques y la estética de Niquelproyect
+html_content = """
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLOTWIST | Secuencia Operativa 2026</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #161616;
+            --accent-color: #ffffff;
+            --secondary-text: #86868b;
+            --border-color: #333333;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .framework-tag {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        /* Secciones de Fase */
+        .phase-section {
+            margin-bottom: 100px;
+        }
+
+        .phase-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .phase-number {
+            font-size: 14px;
+            color: var(--secondary-text);
+            margin-bottom: 5px;
+        }
+
+        .phase-title {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .secuencia-tag {
+            font-size: 10px;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Grid de Actividades */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            border-color: #555;
+        }
+
+        .act-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .act-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .act-tag {
+            font-size: 10px;
+            background: #222;
+            padding: 4px 8px;
+            border-radius: 2px;
+            color: var(--secondary-text);
+        }
+
+        .act-desc {
+            font-size: 14px;
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+        }
+
+        .act-meta {
+            font-size: 12px;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .meta-item b {
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .phase-title { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="framework-tag">Framework 2026</span>
+        <h1># PROYECTO PLOTWIST</h1>
+    </header>
+
+    <section class="phase-section">
+        <div class="phase-header">
+            <div class="phase-number">01 / 05</div>
+            <h2 class="phase-title">El Origen y el Valor</h2>
+        </div>
+        
+        <span class="secuencia-tag">Secuencia Operativa Operacional</span>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">LA OBRA</h3>
+                        <span class="act-tag">BLOQUE 01</span>
+                    </div>
+                    <p class="act-desc">Teatro de Sombras. Apertura total. Desde el mito de Khan y Mara hasta el Espejo.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Teatro</b> Animación</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">DINERO</h3>
+                        <span class="act-tag">BLOQUE 02</span>
+                    </div>
+                    <p class="act-desc">Definición de valor tras la experiencia visual. El dinero como lenguaje.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Ponente:</b> Aaron</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">MERCADO</h3>
+                        <span class="act-tag">BLOQUE 03</span>
+                    </div>
+                    <p class="act-desc">¿Cómo interactuamos hoy? La red invisible de intercambios de valor.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Ponente:</b> Emmanuel</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <div class="phase-header">
+            <div class="phase-number">02 / 05</div>
+            <h2 class="phase-title">Modelos y Riesgo</h2>
+        </div>
+        
+        <span class="secuencia-tag">Secuencia Operativa Operacional</span>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">SISTEMAS ECONÓMICOS</h3>
+                        <span class="act-tag">BLOQUE 04</span>
+                    </div>
+                    <p class="act-desc">Capitalismo, socialismo y las reglas del juego que rigen el mundo.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Teoría</b> Crítica</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">DINÁMICA JENGA</h3>
+                        <span class="act-tag">BLOQUE 05</span>
+                    </div>
+                    <p class="act-desc">Simulación de riesgo físico. Visualización de la fragilidad del sistema.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Lidera:</b> Aaron</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">VENEZUELA VS VENEZUELA</h3>
+                        <span class="act-tag">BLOQUE 06</span>
+                    </div>
+                    <p class="act-desc">Comparativa histórica de nuestra economía. Datos y realidad local.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Análisis</b> Local</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">ESCUELA AUSTRÍACA</h3>
+                        <span class="act-tag">BLOQUE 07</span>
+                    </div>
+                    <p class="act-desc">El individuo como centro de la economía. La acción humana como motor.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Ponente:</b> Emmanuel</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <div class="phase-header">
+            <div class="phase-number">03 / 05</div>
+            <h2 class="phase-title">Variables Adversas</h2>
+        </div>
+        
+        <span class="secuencia-tag">Secuencia Operativa Operacional</span>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">IMPUESTOS</h3>
+                        <span class="act-tag">BLOQUE 08</span>
+                    </div>
+                    <p class="act-desc">Metáfora de alimentación. ¿Quién se come tu pizza? La carga fiscal.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Biología</b> Fiscal</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">DEUDA</h3>
+                        <span class="act-tag">BLOQUE 09</span>
+                    </div>
+                    <p class="act-desc">Metáfora deporte. El peso que te ayuda a saltar o te hunde en el barro.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Apalancamiento</b></span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">INFLACIÓN</h3>
+                        <span class="act-tag">BLOQUE 10</span>
+                    </div>
+                    <p class="act-desc">Metáfora depresión. Cuando el dinero pierde el alma y el poder de compra.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Salud</b> Mental</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">RECESO ACTIVO</h3>
+                        <span class="act-tag">BLOQUE 11</span>
+                    </div>
+                    <p class="act-desc">Estiramiento, música y reseteo mental. Mantener la energía alta.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Música</b> Live</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <div class="phase-header">
+            <div class="phase-number">04 / 05</div>
+            <h2 class="phase-title">Ecuación de Salida</h2>
+        </div>
+        
+        <span class="secuencia-tag">Secuencia Operativa Operacional</span>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">PRESUPUESTO REAL</h3>
+                        <span class="act-tag">BLOQUE 12</span>
+                    </div>
+                    <p class="act-desc">¿Cuánto necesitas para vivir? Libertad financiera y mapeo de metas.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Estrategia</b></span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">CONTROL DE GASTOS</h3>
+                        <span class="act-tag">BLOQUE 13</span>
+                    </div>
+                    <p class="act-desc">El "vampiro" de los gastos hormiga. Dónde se fuga tu libertad.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Filtro</b> Real</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">INVERSIÓN EN TI</h3>
+                        <span class="act-tag">BLOQUE 14</span>
+                    </div>
+                    <p class="act-desc">Oficios y habilidades. Tu activo más resistente a cualquier crisis.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Capital</b> Humano</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">AHORRO Y HABILIDADES</h3>
+                        <span class="act-tag">BLOQUE 15</span>
+                    </div>
+                    <p class="act-desc">Estrategias prácticas para adolescentes. Cómo empezar con cero.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Accionable</b></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phase-section">
+        <div class="phase-header">
+            <div class="phase-number">05 / 05</div>
+            <h2 class="phase-title">Ejecución y Cierre</h2>
+        </div>
+        
+        <span class="secuencia-tag">Secuencia Operativa Operacional</span>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">SIMULACIÓN MONOPOLY</h3>
+                        <span class="act-tag">BLOQUE 16</span>
+                    </div>
+                    <p class="act-desc">Aplicación rápida de conceptos en mesas. Decisiones bajo presión.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Lidera:</b> Emmanuel</span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">P&R + ENTREVISTA</h3>
+                        <span class="act-tag">BLOQUE 17</span>
+                    </div>
+                    <p class="act-desc">Feedback directo. Resolución de dudas y validación técnica.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Interacción</b></span>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div>
+                    <div class="act-header">
+                        <h3 class="act-title">PRESENTACIÓN FINAL</h3>
+                        <span class="act-tag">BLOQUE 18</span>
+                    </div>
+                    <p class="act-desc">Cierre épico. El llamado a la acción definitivo para 5to año.</p>
+                </div>
+                <div class="act-meta">
+                    <span class="meta-item"><b>10</b> MIN</span>
+                    <span class="meta-item"><b>Clímax</b></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>PLOTWIST | Framework 2026 | Fin de la Transmisión</p>
+    </footer>
+</div>
+
+</body>
+</html>
+"""
+
+with open("plotwist_roadmap.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
